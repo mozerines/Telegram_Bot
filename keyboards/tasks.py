@@ -7,6 +7,8 @@ tasks_kb_buttons = [
 
 tasks_kb = InlineKeyboardMarkup(inline_keyboard=tasks_kb_buttons, row_width=1)
 
+# Для того, чтобы у нас было по 3 кнопки в
+
 module_3_kb_buttons = ([
     [
         InlineKeyboardButton(text=f'4 Урок', url=f'https://telegra.ph/M3-U4-02-09'),
@@ -18,10 +20,8 @@ module_3_kb_buttons = ([
         InlineKeyboardButton(text='8 Урок', url='https://telegra.ph/M3-U8-02-27'),
         InlineKeyboardButton(text='9 Урок', url='https://telegra.ph/M3-U9-03-05')
     ],
-    [
-        InlineKeyboardButton(text='10 Урок', url='https://telegra.ph/M3-U10-03-07')],
+        [InlineKeyboardButton(text='10 Урок', url='https://telegra.ph/M3-U10-03-07')],
         [InlineKeyboardButton(text='Назад 🔙', callback_data='Tasks')]
-
 ])
 
 module_3_kb = InlineKeyboardMarkup(inline_keyboard=module_3_kb_buttons, row_width=3)

@@ -17,16 +17,18 @@ async def cmd_start(message: Message):
     await message.answer(text='Выберите раздел: ', reply_markup=main_kb)
 
 
+# Здесь нам и понадобится callback_data, которую мы прописывали ранее в нажатиях на кнопки
 @dp.callback_query(lambda callback: callback.data)
 async def process_callback(callback: CallbackQuery):
     data = callback.data
-    print(callback)
+    # Возврат в главное меню при нажатии на кнопку "Назад 🔙"
     if data == 'Menu':
         await bot.answer_callback_query(callback.id)
         await bot.edit_message_text(text='Выберите раздел: ',
                                     chat_id=callback.from_user.id,
                                     message_id=callback.message.message_id,
                                     reply_markup=main_kb)
+    # Переход к клавиатуре с модулями при нажатии на кнопку "Задания 📝"
     if data == 'Tasks':
         await bot.answer_callback_query(callback.id)
         await bot.edit_message_text(text='Выберите модуль: ',

@@ -7,7 +7,6 @@ tasks_kb_buttons = [
 
 tasks_kb = InlineKeyboardMarkup(inline_keyboard=tasks_kb_buttons, row_width=1)
 
-# Для того, чтобы у нас было по 3 кнопки в
 
 module_3_kb_buttons = ([
     [

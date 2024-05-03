@@ -6,6 +6,7 @@ from aiogram.filters.command import Command
 from keyboards.menu import main_kb
 from keyboards.tasks import tasks_kb, module_3_kb
 from keyboards.learn import learn_kb
+from keyboards.useful_links import ul_kb
 from bot_token import TOKEN
 
 dp = Dispatcher()
@@ -49,6 +50,12 @@ async def process_callback(callback: CallbackQuery):
                                     message_id=callback.message.message_id,
                                     reply_markup=learn_kb
                                     )
+    if data == 'Useful_links':
+        await bot.answer_callback_query(callback.id)
+        await bot.edit_message_text(text='Полезные ссылки',
+                                    chat_id=callback.from_user.id,
+                                    message_id=callback.message.message_id,
+                                    reply_markup=ul_kb)
 
 
 async def main():
